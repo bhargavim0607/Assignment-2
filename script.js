@@ -42,7 +42,10 @@ function cal(){
     if(a.includes('!')){
         a=fact(new Number(a[0]));
     }
-    var y=eval(a)
+    var y=eval(a);
+    if(a==" "){
+        y=null;
+    }
     document.getElementById('display').value=y;
 }
 function fact(a){

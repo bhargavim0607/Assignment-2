@@ -36,12 +36,13 @@ function cal(){
             
         }
     }
-    if(a.includes('!')){
-        a=fact(new Number(a[0]));
-    }
     if(a.includes('ln')){
         a=a.replace('ln','Math.log');
     }
+    if(a.includes('!')){
+        a=fact(new Number(a[0]));
+    }
+    
     var y=eval(a)
     document.getElementById('display').value=y;
 }

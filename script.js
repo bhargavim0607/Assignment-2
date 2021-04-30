@@ -2,9 +2,7 @@
 function val(id){
     a=document.getElementById('display').value;
     document.getElementById('display').value+=id;
-    if(a.includes('ln(')){
-        document.getElementById('display').value+=")";
-    }
+   
 }
 
 function clea(){
@@ -38,6 +36,7 @@ function cal(){
     }
     if(a.includes('ln')){
         a=a.replace('ln','Math.log');
+        a=a+')';
     }
     if(a.includes('!')){
         a=fact(new Number(a[0]));

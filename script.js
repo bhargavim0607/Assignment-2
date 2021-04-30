@@ -23,15 +23,14 @@ function cal(){
         a=a.replace('^','**');
     }
     if(a.includes('√')){
-        a=a.replace('√','Math.sqrt()');
-        if(!isNaN(a[0])){
-            console.log(a);
-            a=a.slice(1,a.length-1)+a[0]+a.slice(a.length-1,);
-            console.log(a);
+        
+        if(a[0]=='√'){
+            var b=a.slice(1,);
+            a="Math.sqrt("+b+")";
         }
-        else if(!isNaN(a[a.length-1])){
-            a=a.slice(0,a.length-2)+a[a.length-1]+a.slice(a.length-2,a.length-1);
-            
+        else if(a[a.length-1]=='√'){
+           var b=a.slice(0,a.length-1);
+           a="Math.sqrt("+b+")";
         }
     }
     if(a.includes('ln')){
@@ -39,7 +38,7 @@ function cal(){
         a=a+')';
     }
     if(a.includes('!')){
-        a=fact(new Number(a[0]));
+        a=fact(new Number(a.slice(0,length-1)));
     }
     var y=eval(a);
     if(y==undefined){

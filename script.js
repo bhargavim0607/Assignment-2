@@ -43,7 +43,7 @@ function cal(){
         a=fact(new Number(a[0]));
     }
     var y=eval(a);
-    if(a==null){
+    if(y==undefined){
         y=null;
     }
     document.getElementById('display').value=y;

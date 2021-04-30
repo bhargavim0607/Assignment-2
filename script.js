@@ -1,6 +1,5 @@
 
 function val(id){
-    a=document.getElementById('display').value;
     document.getElementById('display').value+=id;
    
 }
@@ -57,6 +56,14 @@ function fact(a){
         return n;
     }
 }
-console.log(eval(3*Math.PI));
+
+function operator(id){
+    console.log(document.getElementById('display').value);
+    if(document.getElementById('display').value!=""){
+        document.getElementById('display').value+=id;
+    }else{
+        document.getElementById('display').value=null;
+    }
+}
 
 
